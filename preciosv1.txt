@@ -1,0 +1,12 @@
+Colombia francia 1
+Colombia argentina 5
+Colombia  Japon  7
+Japon Rusia 4
+Rusia Italia 6
+Argentina Italia 3
+Rusia Inglaterra 9
+Inglaterra Egipto 4
+Italia Egipto 5
+Argentina sudafrica 3
+sudafrica Venezuela 1
+Venezuela Francia 3
