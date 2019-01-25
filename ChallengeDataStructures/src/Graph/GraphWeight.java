@@ -43,7 +43,6 @@ public class GraphWeight {
         while (!nodeList.isEmpty()) {
             currentNode = nodeList.poll().getValue();
 
-            System.out.println(currentNode);
             if (visited.get(currentNode))
                 continue;
 
