@@ -1,0 +1,36 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class escaner {
+
+    public static void main(String[] args) {
+        try{
+            File f = new File("C:/Users/fbombiela/ch2/preciosv1.txt");
+            Scanner s = new Scanner(f);
+            int j=1;
+            while(s.hasNextLine()){
+                String line = s.next();
+                String [] parts=line.split(",");
+
+                if(parts.length!=1){
+                    System.out.println("aqui");
+
+                    for(int i=0;i<parts.length;i++) {
+                        System.out.print(parts[i]);
+                    }
+                    System.out.println("");
+
+                }
+                System.out.println(j+" j");
+                j++;
+
+            }
+
+        }catch(FileNotFoundException e){
+            System.out.println("El archivo no existe...");
+        }
+    }
+}
+
+
