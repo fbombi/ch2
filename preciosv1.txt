@@ -1,12 +1,22 @@
-Colombia francia 1
-Colombia argentina 5
-Colombia  Japon  7
-Japon Rusia 4
-Rusia Italia 6
-Argentina Italia 3
-Rusia Inglaterra 9
-Inglaterra Egipto 4
-Italia Egipto 5
-Argentina sudafrica 3
-sudafrica Venezuela 1
-Venezuela Francia 3
+colombia 
+francia
+argentina
+japon
+rusia
+italia 
+inglaterra 
+egipto
+sudafrica
+venezuela
+colombia,francia,1
+colombia,argentina,5
+colombia,japon,7
+japon,rusia,4
+rusia,italia,6
+argentina,italia,3
+rusia,inglaterra,9
+inglaterra,egipto,4
+italia,egipto,5
+argentina,sudafrica,3
+sudafrica,venezuela,1
+venezuela,francia,3

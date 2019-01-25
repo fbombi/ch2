@@ -62,5 +62,6 @@ public class Main {
         grafo.setGraph(city);
         System.out.println(grafo.shortedDistance("colombia"));
          System.out.println(grafo.shortedPath("colombia", "rusia"));
+        System.out.println(grafo.shortedPath("colombia", "rusia"));
     }
 }
