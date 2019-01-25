@@ -1,14 +1,13 @@
 package Graph;
 
 import javafx.util.Pair;
-import java.util.PriorityQueue;
-import java.util.TreeMap;
-import java.util.ArrayList;
-import java.util.Collections;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class GraphWeight {
 
-    public void
 
     private TreeMap<String,TreeMap<String, Integer>> graph;
 
@@ -20,6 +19,54 @@ public class GraphWeight {
         this.graph = graph;
     }
 
+
+    public void loadgraph(String address){
+        TreeMap<String,TreeMap<String, Integer>> city=graph;
+
+
+        try{
+            File f = new File(address);
+            Scanner s = new Scanner(f);
+
+            while(s.hasNextLine()){
+                String line = s.next();
+                String [] parts=line.split(",");
+                if(parts.length!=1){
+                    if(city.containsKey(parts[0])&&city.containsKey(parts[1])) {
+                        city.get(parts[0]).put(parts[1], Integer.parseInt(parts[2]));
+                        city.get(parts[1]).put(parts[0], Integer.parseInt(parts[2]));
+                    }
+                    else{
+                        if(!city.containsKey(parts[0])){
+                            city.put(parts[0], new TreeMap<>());
+                            city.get(parts[0]).put(parts[1], Integer.parseInt(parts[2]));
+
+                            if(!city.containsKey(parts[1])){
+                                city.put(parts[1], new TreeMap<>());
+                                city.get(parts[1]).put(parts[0], Integer.parseInt(parts[2]));
+                            }
+                            else{
+                                city.get(parts[1]).put(parts[0], Integer.parseInt(parts[2]));
+                            }
+                        }
+                        else{
+                            city.put(parts[1], new TreeMap<>());
+                            city.get(parts[0]).put(parts[1], Integer.parseInt(parts[2]));
+                            city.get(parts[1]).put(parts[0], Integer.parseInt(parts[2]));
+                        }
+
+                    }
+                }
+                else{
+                    city.put(line, new TreeMap<>());
+                }
+
+            }
+
+        }catch(FileNotFoundException e){
+            System.out.println("El archivo no existe...");
+        }
+    }
     public void addNode(String node) {
         if (!graph.containsKey(node))
             graph.put(node, new TreeMap<String, Integer>());
