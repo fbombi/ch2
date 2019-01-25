@@ -11,6 +11,7 @@ import java.util.TreeMap;
 
 public class Main {
 
+
     public static void main(String[] args) {
         GraphWeight grafo = new GraphWeight();
         TreeMap<String, TreeMap<String, Integer>> city = new TreeMap<>();
@@ -46,38 +47,20 @@ public class Main {
                             city.get(parts[1]).put(parts[0], Integer.parseInt(parts[2]));
                         }
 
-
                     }
                 }
                 else{
                     city.put(line, new TreeMap<>());
                 }
-              //  System.out.println(city +"  "+ j);
                 j++;
             }
-               for(String key: city.keySet()){
-                   System.out.println(key + " tiene " + city.get(key));
-              }
 
         }catch(FileNotFoundException e){
             System.out.println("El archivo no existe...");
         }
 
         grafo.setGraph(city);
-        System.out.println(grafo.shortedPath("congo"));
-
-
-/*
-        for (int i = 1; i < 6; i++)
-            city.addNode(Integer.toString(i));
-
-        city.addEdge("1", "2", 5);
-        city.addEdge("1", "3", 2);
-        city.addEdge("3", "4", 1);
-        city.addEdge("1", "4", 6);
-        city.addEdge("3", "5", 5);
-
-        System.out.println(city.shortedPath("1"));
-*/
+        System.out.println(grafo.shortedDistance("colombia"));
+         System.out.println(grafo.shortedPath("colombia", "rusia"));
     }
 }
