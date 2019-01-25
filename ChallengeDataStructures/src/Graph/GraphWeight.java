@@ -13,6 +13,10 @@ public class GraphWeight {
         graph = new TreeMap<String,TreeMap<String, Integer>>();
     }
 
+    public void setGraph(TreeMap<String,TreeMap<String, Integer>> graph) {
+        this.graph = graph;
+    }
+
     public void addNode(String node) {
         if (!graph.containsKey(node))
             graph.put(node, new TreeMap<String, Integer>());
