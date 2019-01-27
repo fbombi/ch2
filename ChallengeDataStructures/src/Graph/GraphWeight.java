@@ -4,9 +4,10 @@ import javafx.util.Pair;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serializable;
 import java.util.*;
 
-public class GraphWeight {
+public class GraphWeight implements Serializable {
 
 
     private TreeMap<String,TreeMap<String, Integer>> graph;
